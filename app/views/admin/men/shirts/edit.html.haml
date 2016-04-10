@@ -1,0 +1,12 @@
+= form_for @mens_inventory, url: admin_men_shirt_path(id: @mens_inventory.id), method: :patch, html: {multipart: true} do |f|
+  = f.label :description
+  = f.text_field :description
+  %br/
+  %br/
+  = f.label :cost
+  = f.number_field :cost
+  %br/
+  %br/
+  %span.picture
+    = f.file_field :picture, accept: 'image/jpeg, image/gif, image/png'
+  = f.submit "Save Changes", class:"btn btn-primary"

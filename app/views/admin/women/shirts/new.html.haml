@@ -1,0 +1,12 @@
+= form_for @women_inventory, url: admin_women_shirts_path, method: :post, html: {multipart: true} do |f|
+  = f.label :description
+  = f.text_field :description
+  %br/
+  %br/
+  = f.label :cost
+  = f.number_field :cost
+  %br/
+  %br/
+  %span.picture
+    = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
+  = f.submit "Add", class: "btn btn-primary"

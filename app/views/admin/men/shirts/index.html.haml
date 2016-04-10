@@ -1,0 +1,12 @@
+.inventories
+  - @mens_inventories.each do |mens_inventory|
+    = link_to admin_men_shirt_path(mens_inventory) do
+      .inventory
+        %p= image_tag mens_inventory.picture.url, class: "image"
+        %p.description_cost= mens_inventory.description
+        %p.description_cost= mens_inventory.cost
+        %br/
+        = link_to "Edit", edit_admin_men_shirt_path(mens_inventory), class: "btn btn-default"
+        = link_to "Delete", admin_men_shirt_path(mens_inventory), method: :delete, |
+          data: {confirm: "You sure?"}, class: "btn btn-danger"                    |
+  = link_to "Add a new Inventory", new_admin_men_shirt_path, class: "btn btn-primary new"

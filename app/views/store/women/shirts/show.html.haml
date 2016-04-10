@@ -1,0 +1,12 @@
+.show_page
+  .image_show
+    %p= image_tag @women_inventory.image.url, class: "pic"
+  %h3
+    %b= @women_inventory.description
+  %p= @women_inventory.cost
+  %br
+  %br
+  =link_to "ADD TO CART", "#", class: "btn btn-primary cart"
+
+
+

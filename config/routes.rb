@@ -1,9 +1,35 @@
 Rails.application.routes.draw do
+  
+  root 'admin/men/shirts#index'
+
+  namespace :admin do
+    namespace :men do
+      resources :shirts
+    end
+  end
+
+  namespace :admin do
+    namespace :women do
+      resources :shirts
+    end
+  end
+
+  namespace :store do
+    namespace :men do
+      resources :shirts, only: [:index, :show]
+    end
+  end
+
+  namespace :store do
+    namespace :women do
+      resources :shirts, only: [:index, :show]
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

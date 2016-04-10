@@ -1,0 +1,7 @@
+.inventories
+  - @womens_inventories.each do |women_inventory|
+    = link_to admin_women_shirt_path(women_inventory) do
+      .inventory
+        %p= image_tag women_inventory.image.url
+        %p.description_cost= women_inventory.description
+        %p.description_cost= women_inventory.cost
