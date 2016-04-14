@@ -33,7 +33,6 @@ class Store::Men::ShirtsController < ApplicationController
   end
 
   def send_mail
-   byebug
    CartMailer.checkout_list(params[:email], session[:product_ids]).deliver_now
    redirect_to store_men_shirts_path
   end

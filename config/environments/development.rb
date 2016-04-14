@@ -20,10 +20,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-    domain: "example@railstutorails.org",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    email: ENV["GMAIL EMAIL"]
+    user_name: 'challasashank1995@gmail.com',
+    password: 'sashank@1995',
+    authentication: 'plain',
+    enable_starttls_auto: true
   }
 
   # Print deprecation notices to the Rails logger.
