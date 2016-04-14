@@ -1,6 +1,6 @@
 .inventories
   - @mens_inventories.each do |mens_inventory|
-    = link_to admin_men_shirt_path(mens_inventory) do
+    = link_to store_men_shirt_path(mens_inventory) do
       .inventory
         %p= image_tag mens_inventory.picture.url, class: "image"
         %p.description_cost= mens_inventory.description

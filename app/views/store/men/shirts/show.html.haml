@@ -1,1 +1,12 @@
-This is the show page of #{@mens_inventory.description}
+.show_page
+  .image_show
+    %p= image_tag @mens_inventory.picture.url, class: "pic"
+  %h3
+    %b= @mens_inventory.description
+  %p= @mens_inventory.cost
+  %br
+  %br
+  = link_to "Add to cart", add_to_cart_store_men_shirt_path(@mens_inventory) , class: "btn btn-primary cart"
+
+
+

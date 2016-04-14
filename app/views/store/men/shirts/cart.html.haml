@@ -1,0 +1,12 @@
+.cart
+  - @shopping_cart.each do |shop|
+    .item
+      %p= image_tag shop.picture.url, class: "image"
+      %p= shop.description
+      %p= shop.cost
+      = link_to "delete", remove_from_cart_store_men_shirt_path(shop), method: "remove"
+      %br/
+      %br/
+      %br/
+  .checkout
+    = link_to "Checkout", checkout_store_men_shirts_path
