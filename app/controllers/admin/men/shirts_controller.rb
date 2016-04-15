@@ -46,6 +46,6 @@ class Admin::Men::ShirtsController < ApplicationController
   private
 
   def mens_inventory_params
-    params.require(:mens_inventory).permit(:description, :cost, :picture)
+    params.require(:mens_inventory).permit(:description, :cost, :picture, :quantity)
   end
 end

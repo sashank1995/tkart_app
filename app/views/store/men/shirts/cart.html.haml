@@ -1,12 +1,17 @@
-.cart
-  - @shopping_cart.each do |shop|
-    .item
-      %p= image_tag shop.picture.url, class: "image"
-      %p= shop.description
-      %p= shop.cost
-      = link_to "delete", remove_from_cart_store_men_shirt_path(shop), method: "remove"
-      %br/
-      %br/
-      %br/
-  .checkout
-    = link_to "Checkout", checkout_store_men_shirts_path
+- session[:items].each do |each_item_in_cart|
+  - cart = MensInventory.find(each_item_in_cart["product_id"])
+  .item
+    %p= image_tag cart.picture.url, class: "image"
+    %p= cart.description
+    %p= cart.cost
+    %p
+      Quantity: #{each_item_in_cart["no_of_items"]}
+    = link_to "delete", remove_from_cart_store_men_shirt_path(id: each_item_in_cart["product_id"], quantity: each_item_in_cart["no_of_items"]), method: "delete"
+    %br/
+    %br/
+    %br/
+.checkout
+  = link_to "Contine Shopping", store_men_shirts_path
+  %br/
+  = link_to "Checkout", checkout_store_men_shirts_path
+

@@ -6,7 +6,11 @@
   %p= @mens_inventory.cost
   %br
   %br
-  = link_to "Add to cart", add_to_cart_store_men_shirt_path(@mens_inventory) , class: "btn btn-primary cart"
+  =form_tag add_to_cart_store_men_shirt_path(@mens_inventory,params[:quantity]) do
+    =label_tag :quantity
+    =number_field_tag :quantity
+    %br/
+    =submit_tag "Add to cart" , class: "btn btn-primary cart"
 
 
 

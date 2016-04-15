@@ -7,11 +7,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header.navbar.navbar-fixed-top.navbar-inverse
-      .container
-        =link_to "TKART", root_path, id: "logo"
-        %ul.nav.navbar-nav.navbar-right
-          %li= link_to "Home", "#"
-          %li= link_to "Shop", "#"
-          %li= link_to "About Us", "#"
-    = yield
+    = render 'layouts/header'
+    .container
+      - flash.each do |message_type, message|
+        %div{:class => "alert alert-#{message_type}"}= message
+      = yield

@@ -15,7 +15,7 @@ class Admin::Women::ShirtsController < ApplicationController
     else
       render 'new'
       flash[:danger] = "Inventory not saved"
-    end 
+    end
   end
 
   def edit
@@ -46,6 +46,6 @@ class Admin::Women::ShirtsController < ApplicationController
   private
 
   def women_inventory_params
-    params.require(:womens_inventory).permit(:description, :cost, :image)
+    params.require(:womens_inventory).permit(:description, :cost, :image, :quantity)
   end
 end

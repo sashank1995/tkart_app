@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     namespace :men do
       resources :shirts, only: [:index, :show] do
         member do
-          get :add_to_cart
+          post :add_to_cart
           delete :remove_from_cart
         end
 
@@ -29,7 +29,18 @@ Rails.application.routes.draw do
     end
 
     namespace :women do
-      resources :shirts, only: [:index, :show]
+      resources :shirts, only: [:index, :show] do
+        member do
+          post :add_to_cart
+          delete :remove_from_cart
+        end
+
+        collection do
+          get :cart
+          get :checkout
+          post :send_mail
+        end
+      end
     end
   end
 

@@ -1,0 +1,18 @@
+- session[:items].each do |each_item_in_cart|
+  - cart = WomensInventory.find(each_item_in_cart["product_id"])
+  .item
+    %p= image_tag cart.image.url, class: "image"
+    %p= cart.description
+    %p= cart.cost
+    %p
+      Quantity: #{each_item_in_cart["no_of_items"]}
+    = link_to "delete", remove_from_cart_store_women_shirt_path(id: each_item_in_cart["product_id"], quantity: each_item_in_cart["no_of_items"]), method: "delete"
+    %br/
+    %br/
+    %br/
+.checkout
+  = link_to "Contine Shopping", store_women_shirts_path
+  %br/
+  = link_to "Checkout", checkout_store_women_shirts_path
+
+
